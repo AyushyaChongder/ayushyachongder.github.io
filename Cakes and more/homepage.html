@@ -8,32 +8,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-    <title>Landing Page Design Using HTML & CSS</title>
+    <title>Homepage</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <img src="logo1-removebg-preview.png" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="homepage.html">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#catalogue">Catalogue</a></li>
-                    <li><a href="#recipe">Recipes</a></li>
-                </ul>
-            </nav>
-            <button class="btn" id="btn1">Contact</button>
-            <button class="btn" id="btn2">Sign Up</button>
-        </div>
-        <div class="content">
-          <div class="text">
-            <h1>Craving for something sweet?<br><h2>Eating a cake can never go wrong!</h2></h1>
-            <p>Cakes & More is a budding home bakery <br>Originally created in 2020, <br>Cakes and more has now emerged as<br>one of the leading bakeries in this country.</p>
-            
-            <button class="btn3">Buy Now</button>
-          </div>
-        </div>
+  <div class="container">
+
+    <video src="pexels-los-muertos-crew-8477931 - Copy.mp4" muted loop autoplay></video>
+    <div class="overlay"></div>
+    <div class="header">
+        <img src="logo1-removebg-preview.png" class="logo">
+        <nav>
+            <ul>
+                <li><a href="homepage.html">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#catalogue">Catalogue</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                
+            </ul>
+        </nav>
+        <button class="btn" id="btn1">Contact</button>
+        <button class="btn" id="btn2">Sign Up</button>
     </div>
+    
+
+ 
+
+  
+    <div class="content">
+      <div class="text">
+        <h1>Craving for something sweet?<br><h2>Eating a cake can never go wrong!</h2></h1>
+        <p>Cakes & More is a budding home bakery <br>Originally created in 2020, <br>Cakes and more has now emerged as<br>one of the leading bakeries in this country.</p>
+        
+        <button class="btn3">Buy Now</button>
+      </div>
+    </div>
+</div>
     <!--about section-->
     <section class="about" id="about">
        <div class="about">
@@ -66,21 +75,21 @@
     </section>
     <!--video gallery section-->
     <section class="video" id="video">
-      <div class="video-gallery">
+      <div class="video-gallery" id="gallery">
         <h1>Video Gallery</h1>
         <div class="row1">
-          <video width="600" height="480" controls autoplay>
+          <video width="600" height="480" muted loop autoplay>
             <source src="pexels-any-lane-5727374.mp4" type="video/mp4">
           </video>
-          <video width="600" height="480" controls autoplay>
+          <video width="600" height="480" muted loop autoplay>
             <source src="video (1).mp4" type="video/mp4">
           </video>
         </div>
         <div class="row2">
-          <video width="600" height="480" controls autoplay>
+          <video width="600" height="480" muted loop autoplay>
             <source src="pexels-shvets-production-7525334.mp4" type="video/mp4">
           </video>
-          <video width="600" height="480" controls autoplay>
+          <video width="600" height="480" muted loop autoplay>
             <source src="pexels-los-muertos-crew-8477931.mp4" type="video/mp4">
           </video>
         </div>
@@ -181,8 +190,118 @@
 </section>
 <!--geolocation-->
 <section class="location" id="location">
-  
+  <h3>Click the button to get your coordinates.</h3>
+<div class="btn4"><button onclick="getLocation()">Try It</button></div>
+<p id="demo"></p>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.watchPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+    
+function showPosition(position) {
+    x.innerHTML="Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;
+}
+</script>
 </section>
+
+<!--footer section
+<section class="footer1" id="footer1">
+  <footer class="footer">
+    <div class="footer__addr">
+      <h1 class="footer__logo">Cakes and More</h1>
+        <img src="logo1-removebg-preview.png" alt="logo">
+      <h2>Contact</h2>
+      
+      <address>
+        5534 Somewhere In. The World 22193-10212<br>
+            
+        <div class=""><a class="footer__btn" href="mailto:example@gmail.com">Email Us</a></div>
+      </address>
+    </div>
+    
+    <ul class="footer__nav">
+      <li class="nav__item">
+        <h2 class="nav__title">Media</h2>
+  
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Photos</a>
+          </li>
+  
+          <li>
+            <a href="#">Videos</a>
+          </li>
+              
+          <li>
+            <a href="#">Podcasts</a>
+          </li>
+        </ul>
+      </li>
+      
+      <li class="nav__item nav__item--extra">
+        <h2 class="nav__title"></h2>
+        
+        <ul class="nav__ul nav__ul--extra">
+          <li>
+            <a href="#">Hardware Design</a>
+          </li>
+          
+          <li>
+            <a href="#">Software Design</a>
+          </li>
+          
+          <li>
+            <a href="#">Digital Signage</a>
+          </li>
+          
+          <li>
+            <a href="#">Automation</a>
+          </li>
+          
+          <li>
+            <a href="#">Artificial Intelligence</a>
+          </li>
+          
+          
+        </ul>
+      </li>
+      
+      <li class="nav__item">
+        <h2 class="nav__title">Legal</h2>
+        
+        <ul class="nav__ul">
+          <li>
+            <a href="#">Privacy Policy</a>
+          </li>
+          
+          <li>
+            <a href="#">Terms of Use</a>
+          </li>
+          
+          <li>
+            <a href="#">Sitemap</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    
+    <div class="legal">
+      <p>&copy; 2022 cakes and more. All rights reserved.</p>
+      
+      <div class="legal__links">
+
+      </div>
+    </div>
+  </footer>
+</section>-->
 </body>
 </html>
  
